@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import './login.scss';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FacebookTwoTone, Google, Visibility, VisibilityOff } from '@mui/icons-material';
+import { auth } from '../../firebase';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 
 const Login = () => {
 
@@ -11,7 +13,8 @@ const Login = () => {
   });
 
   const[toggleEye, setToggleEye] = useState(false);
-  const[inputType, setInputType] = useState("password")
+  const[inputType, setInputType] = useState("password");
+  const navigate = useNavigate()
 
   const handleToggle = (e) => {
     setToggleEye(!toggleEye);
@@ -22,6 +25,24 @@ const Login = () => {
     setInputs((prev) => ({ ...prev, [e.target.name]:e.target.value})
     );
   }
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    try {
+      signInWithEmailAndPassword(auth, inputs.email, inputs.password)
+        .then((userCredential) => {
+          // Signed in 
+          const user = userCredential.user;
+          // ...
+          navigate('/');
+        })
+
+    } catch(error){}
+  }
+
+
+  console.log(inputs);
 
   return (
     <div className='login'>
@@ -49,7 +70,7 @@ const Login = () => {
             {toggleEye ? <Visibility /> : <VisibilityOff />}
           </div>
         </div>
-        <button type='submit'>Login</button>
+        <button type='submit' onClick={handleLogin}>Login</button>
         <div className="formLink">
           <span>Don't have an account?</span>
           <Link 

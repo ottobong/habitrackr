@@ -114,7 +114,7 @@ const handleChange =(e)=> {
           className='google' 
           style={{textDecoration: 'none'}}>
             <Google className='googleIcon'/>
-            <span>Signup with Google</span>
+            <span>Sign up with Google</span>
           </Link>
         </div>
       </form>

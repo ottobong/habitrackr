@@ -1,0 +1,126 @@
+.login{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  background-color: #FED32C;
+
+  form {
+    background-color: white;
+    max-width: 400px;
+    padding: 20px;
+    width: 100%;
+    border-radius: 10px;
+
+    h2 {
+      font-size: 20px;
+      font-weight: bold;
+      color: #000;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .formInput {
+      position: relative;
+    }
+
+    .eyeIcon {
+      position: absolute;
+      top: 13px;
+      right: 0;
+      font-size: 18px !important;
+      padding: 5px;
+      color: #3a39397f;
+      cursor: pointer;
+    }
+
+    button {
+      height: 50px;
+      width: 100%;
+      background-color: #FED32C;
+      border: none;
+      border-radius: 8px;
+      font-weight: 500;
+      font-size: 18px;
+      margin: 15px 0 10px 0;
+      cursor: pointer;
+      transition: .5s;
+
+      &:hover{
+        background-color: #000;
+        color: #FED32C;
+      }
+    }
+    
+
+    .formLink {
+      text-align: center;
+    }
+
+    .line {
+      position: relative;
+      height: 1px;
+      width: 100%;
+      margin: 20px 0px;
+      background-color: #d4d4d4;
+
+      &::before {
+        content: "Or";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        color: #232836;
+        padding: 0 15px;
+      }
+    }
+
+    .facebook {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #4267b2;
+      color: #fff;
+      height: 50px;
+      width: 100%;
+      margin-top: 20px;
+      border-radius: 8px;
+      transition: all .3s ease;
+
+      &:hover {
+        background-color: #1849aa;
+        color: white;
+      }
+    }
+
+    .google {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #d3d3d3;
+      color: #000;
+      height: 50px;
+      width: 100%;
+      margin-top: 10px;
+      border-radius: 8px;
+      transition: all .3s ease;
+
+      &:hover {
+        background-color: #000;
+        color: white;
+      }
+    }
+
+    .facebookIcon, .googleIcon {
+      object-fit: cover;
+      margin-right: 12px;
+      height: 28px;
+      width: 28px;
+    }
+  }
+}
+
